@@ -12,4 +12,46 @@
  *
  *= require_tree .
  *= require_self
+ *= require simple_calendar
  */
+
+.simple-calendar {
+  .day {
+  	text-align: center;
+  	vertical-align: middle;
+  }
+
+  .wday-0 {
+  	text-align: center;
+  }
+  .wday-1 {
+  	text-align: center;
+  }
+  .wday-2 {
+  	text-align: center;
+  }
+  .wday-3 {
+  	text-align: center;
+  }
+  .wday-4 {
+  	text-align: center;
+  }
+  .wday-5 {
+  	text-align: center;
+  }
+  .wday-6 {
+  	text-align: center;
+  }
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
+}

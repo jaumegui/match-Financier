@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'matchs',     to: 'matchs#index'
   post 'matchs',    to: 'matchs#create'
   get 'matchs/:date', to: 'matchs#show', as: :match
-  get 'matchs/new/:date', to: 'matchs#new'
+  get 'matchs/new/:date', to: 'matchs#new', as: :new
   delete 'matchs/:id', to: 'matchs#delete'
   root 'matchs#index'
 end
