@@ -1,17 +1,22 @@
 <% week_end = ["Saturday", "Sunday"] %>
 
-<div class="container">
-
   <% day = Date.parse(@date).strftime("%A, %d %b %Y")  %>
-  <h1><%= day %></h1>
-  <p><%= link_to 'Reload', new_path(params[:date]) %></p>
+  <div class="day-title">
+    <h1><%= day %></h1>
+    <%= link_to  new_path(params[:date]) do %>
+      <i class="fas fa-sync-alt"></i>
+    <% end %>
+  </div>
 
     <% @day.matchs.order(:hour).each do |match| %>
       <% if week_end.exclude?(day.split(',')[0]) %>
         <% if match.hour.split(':')[0].to_i >=  17 %>
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7));">
             <div class="card-description">
-              <h5><%= match.hour %></h5><p><%= match.channel %></p>
+              <div class="card-details">
+                <h5><%= match.hour %></h5>
+                <p><%= match.channel %></p>
+              </div>
               <h3><%= match.name %></h3>
             </div>
             <div class="card-right">
@@ -35,6 +40,5 @@
         </div>
       <% end %>
     <% end %>
-</div>
 
 

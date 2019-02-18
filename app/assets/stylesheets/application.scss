@@ -73,3 +73,29 @@
 tbody a {
     font-size: 23px;
 }
+
+h1, p {
+  text-align: center;
+  a {
+    text-decoration: none;
+  }
+}
+
+.day-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  a {
+  font-size: 35px;
+  color: black;
+  }
+}
+
+h5 {
+  font-size: 36px,
+}
+
+h3 {
+  font-size: 36px;
+  margin-top: 10px;
+}

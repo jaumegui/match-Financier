@@ -5,7 +5,7 @@
   background-position: center;
   color: white;
   position: relative;
-  margin: 15px 0px;
+  margin: 15px 25px;
 }
 .card-user {
   position: absolute;
@@ -50,10 +50,19 @@
 
 .card-right {
   position: absolute;
-  top: 14px;
+  top: 50px;
   right: 30px;
   p {
     color: white;
-    font-size: 20px;
+    font-size: 40px;
+  }
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    font-size: 18px;
   }
 }
