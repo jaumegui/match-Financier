@@ -67,3 +67,4 @@ gem 'simple_form'
 gem 'nokogiri'
 gem 'open_uri_redirections'
 gem "simple_calendar", "~> 2.0"
+gem 'faker'
