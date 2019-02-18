@@ -48,7 +48,11 @@ class MatchsController < ApplicationController
 
   def show
     @date = params[:date]
-    @day = Day.find_by(name: @date)
+    if Day.exists?(name: @date)
+      @day = Day.find_by(name: @date)
+    else
+      new
+    end
   end
 
   def delete

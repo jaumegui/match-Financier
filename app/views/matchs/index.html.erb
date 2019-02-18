@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col col-xs-6 col-lg-10 offset-lg-1">
       <%= month_calendar number_of_weeks: 3 do |date| %>
-        <%= link_to date.day, new_path(date) %>
+        <%= link_to date.day, match_path(date) %>
       <% end %>
     </div>
   </div>
