@@ -13,7 +13,10 @@
  *= require_tree .
  *= require_self
  *= require simple_calendar
+ *= require font-awesome
  */
+
+@import 'cards';
 
 .simple-calendar {
   .day {
@@ -54,4 +57,19 @@
   .current-month {}
 
   .has-events {}
+}
+
+.calendar-heading {
+  display: flex;
+  padding: 20px;
+  justify-content: space-evenly;
+  font-size: 30px;
+}
+
+.table thead th {
+  text-align: center;
+}
+
+tbody a {
+    font-size: 23px;
 }
