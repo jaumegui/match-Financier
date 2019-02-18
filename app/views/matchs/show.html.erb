@@ -7,7 +7,7 @@
   <p><%= link_to 'Reload', new_path(params[:date]) %></p>
 
   <div>
-    <% @day.matchs.each do |match| %>
+    <% @day.matchs.order(:hour).each do |match| %>
       <% if week_end.exclude?(day.split(',')[0]) %>
         <% if match.hour.split(':')[0].to_i >=  17 %>
           <h3><%= match.name %></h3>
@@ -21,4 +21,3 @@
       <% end %>
     <% end %>
 </div>
-
