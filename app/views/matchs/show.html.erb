@@ -29,8 +29,11 @@
         <% elsif match.hour.split(':')[0].to_i >=  14 %>
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7));">
           <div class="card-description">
-            <h5><%= match.hour %></h5><p><%= match.channel %></p>
-            <h3><%= match.name %></h3>
+            <div class="card-details">
+              <h5><%= match.hour %></h5>
+              <p><%= match.channel %></p>
+            </div>
+              <h3><%= match.name %></h3>
           </div>
           <div class="card-right">
               <%= link_to match, method: :delete do %>
