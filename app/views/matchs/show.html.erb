@@ -1,47 +1,14 @@
 <% week_end = ["Saturday", "Sunday"] %>
 
-  <% day = Date.parse(@date).strftime("%A, %d %b %Y")  %>
+  <% day1 = Date.parse(@date).strftime("%A, %d %b %Y")  %>
   <div class="day-title">
-    <h1><%= day %></h1>
-    <%= link_to  new_path(params[:date]) do %>
+    <h1><%= day1 %></h1>
+    <%= link_to  new_path(@date) do %>
       <i class="fas fa-sync-alt"></i>
     <% end %>
   </div>
 
-    <% @day.matchs.order(:hour).each do |match| %>
-      <% if week_end.exclude?(day.split(',')[0]) %>
-        <% if match.hour.split(':')[0].to_i >=  17 %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7));">
-            <div class="card-description">
-              <div class="card-details">
-                <h5><%= match.hour %></h5>
-                <p><%= match.channel %></p>
-              </div>
-              <h3><%= match.name %></h3>
-            </div>
-            <div class="card-right">
-              <%= link_to match, method: :delete do %>
-                <p> <i class="far fa-trash-alt"></i> </p>
-              <% end %>
-            </div>
-          </div>
-      <% end %>
-        <% elsif match.hour.split(':')[0].to_i >=  14 %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7));">
-          <div class="card-description">
-            <div class="card-details">
-              <h5><%= match.hour %></h5>
-              <p><%= match.channel %></p>
-            </div>
-              <h3><%= match.name %></h3>
-          </div>
-          <div class="card-right">
-              <%= link_to match, method: :delete do %>
-                <p> <i class="far fa-trash-alt"></i> </p>
-              <% end %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-
+  <div class="container" id="matchs-list"> 
+    <%= render 'matchs_lists', day: @day, week_end: week_end, day1: day1 %>
+  </div>
 

@@ -1,0 +1,35 @@
+<% day.matchs.order(:hour).each do |match| %>
+  <% if week_end.exclude?(day1.split(',')[0]) %>
+    <% if match.hour.split(':')[0].to_i >=  17 %>
+      <div class="card" id="<%= match.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7));">
+        <div class="card-description">
+          <div class="card-details">
+            <h5><%= match.hour %></h5>
+            <p><%= match.channel %></p>
+          </div>
+          <h3><%= match.name %></h3>
+        </div>
+        <div class="card-right">
+          <%= link_to match, method: :delete, remote: true do %>
+            <p> <i class="far fa-trash-alt"></i> </p>
+          <% end %>
+        </div>
+      </div>
+  <% end %>
+    <% elsif match.hour.split(':')[0].to_i >=  13 %>
+    <div class="card" id="<%= match.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7));">
+      <div class="card-description">
+        <div class="card-details">
+          <h5><%= match.hour %></h5>
+          <p><%= match.channel %></p>
+        </div>
+          <h3><%= match.name %></h3>
+      </div>
+      <div class="card-right">
+          <%= link_to match, method: :delete, remote: true do %>
+            <p> <i class="far fa-trash-alt"></i> </p>
+          <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

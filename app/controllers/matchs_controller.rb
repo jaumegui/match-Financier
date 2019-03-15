@@ -58,8 +58,13 @@ class MatchsController < ApplicationController
   def delete
     @match = Match.find_by(id: params[:id])
     @day = Day.find_by(id: @match.day_id)
-    @match.destroy
-    redirect_to match_path(@day.name)
+    @date = Day.find_by(id: @match.day_id).name
+    if @match.destroy
+      respond_to do |format|
+        format.html { render 'matchs/show' }
+        format.js # <-- will render `app/views/reviews/create.js.erb`
+      end
+    end
   end
 end
 	
