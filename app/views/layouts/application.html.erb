@@ -12,10 +12,6 @@
   </head>
 
   <body>
-    <div class="navbar">
-      <%=  link_to 'The Financier', matchs_path %>
-      <p><%= Time.now.strftime("%d/%m/%Y %H:%M") %></p>
-    </div>
     <%= yield %>
     <%#= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

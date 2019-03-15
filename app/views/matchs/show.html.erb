@@ -1,14 +1,17 @@
 <% week_end = ["Saturday", "Sunday"] %>
+<% day1 = Date.parse(@date).strftime("%A, %d %b %Y")  %>
 
-  <% day1 = Date.parse(@date).strftime("%A, %d %b %Y")  %>
-  <div class="day-title">
-    <h1><%= day1 %></h1>
-    <%= link_to  new_path(@date) do %>
-      <i class="fas fa-sync-alt"></i>
-    <% end %>
-  </div>
+<div class="day-title">
+  <%=  link_to matchs_path do %>
+    <i class="fas fa-home"></i>
+  <% end %>
 
-  <div class="container" id="matchs-list"> 
-    <%= render 'matchs_lists', day: @day, week_end: week_end, day1: day1 %>
-  </div>
+  <h1><%= day1 %></h1>
+  
+  <%= link_to  new_path(@date) do %>
+    <i class="fas fa-sync-alt"></i>
+  <% end %>
+</div>
+<%= render 'matchs_lists', day: @day, week_end: week_end, day1: day1 %>
+
 

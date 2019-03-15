@@ -35,3 +35,10 @@ input[type='checkbox']:checked + .switch {
   position: absolute;
   left: -9999px;
 }
+
+.day-title {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
